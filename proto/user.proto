@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+message User {
+    string id = 1;
+    string username = 2;
+    string email = 3;
+    string password = 4;
+    string bio = 5;
+}
+
+service UserService {
+    rpc Register(User) returns (User);
+    rpc Login(User) returns (User);
+    rpc SetProfile(User) returns (User);
+    rpc GetProfile(User) returns (User);
+    rpc UpdateProfile(User) returns (User);
+}
